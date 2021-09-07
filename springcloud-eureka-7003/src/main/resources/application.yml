@@ -1,0 +1,13 @@
+server:
+  port: 7003
+
+
+#Eureka配置
+eureka:
+  instance:
+    hostname: eureka7003.com    #Eureka服务端的实例名称
+  client:
+    register-with-eureka: false   #表示是否向eureka注册中心注册自己
+    fetch-registry: false    # 如果为false表示自己为注册中心，就是维护其他的服务的
+    service-url:          #这个可以理解为我们前端页面的地址,下面的地址是我们注册的地址，而我们项目启动之后我们访问localhost:7001就能够访问到eureka的页面了
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7001.com:7001/eureka/
